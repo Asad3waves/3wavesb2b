@@ -201,7 +201,21 @@
         {%- else -%}
           <div class="collection{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}">
             <div class="loading-overlay gradient"></div>
-                
+                <div class="export_products">
+                  <button onclick="exportTableToCSV('all_products.csv')" class="export_btn" style="display:none"> Export All Products </button> 
+                    <table class="export_table" style="display:none">
+                      <tr>
+                          <th> product_name </th>
+                          <th> sku </th>
+                          <th>  size </th>
+                          <th> price  </th>
+                          <th> items/case  </th>
+                          <th> qty  </th>
+                      </tr>
+                 
+                  </table>
+                   
+                </div>
           
     
               <ul id="product-grid" data-id="{{ section.id }}" class="quick-buy-wrapper">
@@ -293,7 +307,7 @@
         html += "<tr><td>" + variants[index].name +
         "</td><td>" + variants[index].sku + "</td><td>" + size + "</td><td>"
         +price+ "</td><td>" + quantity + "</td>";
-    html+="</tr>";
+    html+="<td></td></tr>";
           }
 }
         $('.export_table').append(html)
