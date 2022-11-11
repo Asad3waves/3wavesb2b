@@ -202,8 +202,8 @@
           <div class="collection{% if section.settings.filter_type != 'vertical' %} page-width{% endif %}">
             <div class="loading-overlay gradient"></div>
                 
-          
-    
+
+
               <ul id="product-grid" data-id="{{ section.id }}" class="quick-buy-wrapper">
               {%- for product in collection.products -%}
                 {% assign lazy_load = false %}
@@ -293,7 +293,7 @@
         html += "<tr><td>" + variants[index].name +
         "</td><td>" + variants[index].sku + "</td><td>" + size + "</td><td>"
         +price+ "</td><td>" + quantity + "</td>";
-    html+="</tr>";
+    html+="<td></td></tr>";
           }
 }
         $('.export_table').append(html)
@@ -331,8 +331,10 @@ function exportTableToCSV(filename) {
        row.push(cols[j].innerText);  
     csv.push(row.join(","));  
    }   
+  console.log(csv)
    //call the function to download the CSV file  
    downloadCSV(csv.join("\n"), filename);  
+  
 }  
   
         
