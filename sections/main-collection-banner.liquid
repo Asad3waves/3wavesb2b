@@ -37,26 +37,26 @@
         <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
         {{- collection.title | escape -}}
       </h1>
+
       {%- if section.settings.show_collection_description -%}
         <div class="collection-hero__description rte">{{ collection.description }}</div>
       {%- endif -%}
     </div>
     {% if collection.handle == 'all-products' %}
     <div class="export_products">
-      <button onclick="exportTableToCSV('all_products.csv')" class="export_btn"> Export All Products </button> 
+      <button onclick="exportTableToCSV('all_products.csv')" class="export_btn" style="display:none"> Export All Products </button> 
         <table class="export_table" style="display:none">
           <tr>
-              <th> Product Name </th>
-              <th> SKU </th>
-              <th>  Size </th>
-              <th> Prize  </th>
-              <th> Quantity  </th>
+              <th> product_name </th>
+              <th> sku </th>
+              <th>  size </th>
+              <th> price  </th>
+              <th> items/case  </th>
+              <th> qty  </th>
           </tr>
       </table>
     </div>
     {% endif %}
-    
-
 
     {%- if section.settings.show_collection_image and collection.image -%}
       <div class="collection-hero__image-container media gradient">
