@@ -240,6 +240,8 @@
         low: 15, // low stock threshold
         last: true, // set to false to hide last stock message
       },
+      customerReferenceHidden: true,
+
     },
     auth: {
       user: {{ customer.email | json }},
@@ -247,10 +249,24 @@
     },
     checkoutCustomElements: [
     {
+      name: "Addtional Information",
+      translations: {
+        en: {
+          title: "Addtional Information",
+          detail:  ""
+        }
+      },
+      attributes: {
+        required: false,
+        type: "text",
+        placeholder: "Order notes e.g. Shipping Instructions",
+      }
+    },  
+    {
       name: "Email Address",
       translations: {
         en: {
-          title: "Email Address",
+          title: "CC Email Address",
           detail:  ""
         }
       },
@@ -280,8 +296,8 @@
 
 	:root {
 	  /* Set the brand styling */
-	  --b2b-brand-color: #334fb4; /* Main brand colour*/
-	  --b2b-brand-color-hover: #617bd8; /* Main brand colour hover */
+	  --b2b-brand-color: #000000; /* Main brand colour*/
+	  --b2b-brand-color-hover: #000000; /* Main brand colour hover */
 	  --b2b-brand-font: Assistant, sans-serif; /* Main brand font */
 	  --b2b-brand-font-heading: Assistant, sans-serif; /* Main brand heading font */
 
