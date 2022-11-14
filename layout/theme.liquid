@@ -260,6 +260,22 @@
       user: {{ customer.email | json }},
       token: {{ customer.metafields.sparklayer.authentication | json }},
     },
+    checkoutCustomElements: [
+    {
+      name: "Email Address",
+      translations: {
+        en: {
+          title: "Email Address",
+          detail:  ""
+        }
+      },
+      attributes: {
+        required: true,
+        type: "email",
+        placeholder: "Email to receive copy of order confirmation",
+      }
+    },
+  ],
   };
 </script>
 <script async src="https://cdn.sparklayer.io/spark.0.8.22.js"></script>
