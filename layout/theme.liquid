@@ -224,6 +224,21 @@
 <!-- Start of SparkLayer core script-->
 <script>
   window.sparkOptions = {
+    checkoutCustomElements: [
+    {
+      name: "delivery-date",
+      translations: {
+        en: {
+          title: "Delivery Date",
+          detail:  "Delivery unavailable on weekends."
+        }
+      },
+      attributes: {
+        required: true,
+        type: "date"
+      }
+    },
+  ],
     siteId: "3wavesdigital",
     platform: "shopify",
     rootUrl: {{ routes.root_url | json }},
@@ -247,7 +262,7 @@
     },
   };
 </script>
-<script async src="https://cdn.sparklayer.io/spark.0.8.21.js"></script>
+<script async src="https://cdn.sparklayer.io/spark.0.8.13.js"></script>
 <!-- End of SparkLayer core script-->
 {%- endif -%}
 
